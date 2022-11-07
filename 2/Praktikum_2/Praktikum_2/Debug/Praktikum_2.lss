@@ -1,0 +1,357 @@
+
+Praktikum_2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  000001fa  0000028e  2**0
+                  ALLOC, LOAD, DATA
+  1 .text         000000c4  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      0000002f  00000000  00000000  0000028e  2**0
+                  CONTENTS, READONLY
+  3 .stack.descriptors.hdr 0000000e  00000000  00000000  000002bd  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000028  00000000  00000000  000002cb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000009a3  00000000  00000000  000002f3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000006b7  00000000  00000000  00000c96  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002bd  00000000  00000000  0000134d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000034  00000000  00000000  0000160c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000213  00000000  00000000  00001640  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000018  00000000  00000000  00001853  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .text         00000004  000001e8  000001e8  0000027c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 12 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000186c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .text.blink_func 0000007e  00000154  00000154  000001e8  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 14 .text.main    00000090  000000c4  000000c4  00000158  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .data.currentLED 00000002  00800100  000001f6  0000028a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 16 .data.blinkstate 00000002  00800102  000001f8  0000028c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 17 .text.__dummy_fini 00000002  000001f0  000001f0  00000284  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 18 .text.__dummy_funcs_on_exit 00000002  000001f2  000001f2  00000286  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text.__dummy_simulator_exit 00000002  000001f4  000001f4  00000288  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 20 .text.exit    00000016  000001d2  000001d2  00000266  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 21 .text._Exit   00000004  000001ec  000001ec  00000280  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 38 00 	jmp	0x70	; 0x70 <__ctors_end>
+   4:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+   8:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+   c:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  10:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  14:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  18:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  1c:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  20:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  24:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  28:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  2c:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  30:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  34:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  38:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  3c:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  40:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  44:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  48:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  4c:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  50:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  54:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  58:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  5c:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  60:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+  64:	0c 94 f4 00 	jmp	0x1e8	; 0x1e8 <__bad_interrupt>
+
+00000068 <.dinit>:
+  68:	01 00       	.word	0x0001	; ????
+  6a:	01 04       	cpc	r0, r1
+  6c:	00 01       	movw	r0, r0
+  6e:	f6 00       	.word	0x00f6	; ????
+
+00000070 <__ctors_end>:
+  70:	11 24       	eor	r1, r1
+  72:	1f be       	out	0x3f, r1	; 63
+  74:	cf ef       	ldi	r28, 0xFF	; 255
+  76:	d8 e0       	ldi	r29, 0x08	; 8
+  78:	de bf       	out	0x3e, r29	; 62
+  7a:	cd bf       	out	0x3d, r28	; 61
+
+0000007c <__do_copy_data>:
+  7c:	e8 e6       	ldi	r30, 0x68	; 104
+  7e:	f0 e0       	ldi	r31, 0x00	; 0
+  80:	40 e0       	ldi	r20, 0x00	; 0
+  82:	17 c0       	rjmp	.+46     	; 0xb2 <__do_clear_bss+0x8>
+  84:	b5 91       	lpm	r27, Z+
+  86:	a5 91       	lpm	r26, Z+
+  88:	35 91       	lpm	r19, Z+
+  8a:	25 91       	lpm	r18, Z+
+  8c:	05 91       	lpm	r16, Z+
+  8e:	07 fd       	sbrc	r16, 7
+  90:	0c c0       	rjmp	.+24     	; 0xaa <__do_clear_bss>
+  92:	95 91       	lpm	r25, Z+
+  94:	85 91       	lpm	r24, Z+
+  96:	ef 01       	movw	r28, r30
+  98:	f9 2f       	mov	r31, r25
+  9a:	e8 2f       	mov	r30, r24
+  9c:	05 90       	lpm	r0, Z+
+  9e:	0d 92       	st	X+, r0
+  a0:	a2 17       	cp	r26, r18
+  a2:	b3 07       	cpc	r27, r19
+  a4:	d9 f7       	brne	.-10     	; 0x9c <__do_copy_data+0x20>
+  a6:	fe 01       	movw	r30, r28
+  a8:	04 c0       	rjmp	.+8      	; 0xb2 <__do_clear_bss+0x8>
+
+000000aa <__do_clear_bss>:
+  aa:	1d 92       	st	X+, r1
+  ac:	a2 17       	cp	r26, r18
+  ae:	b3 07       	cpc	r27, r19
+  b0:	e1 f7       	brne	.-8      	; 0xaa <__do_clear_bss>
+  b2:	ef 36       	cpi	r30, 0x6F	; 111
+  b4:	f4 07       	cpc	r31, r20
+  b6:	31 f7       	brne	.-52     	; 0x84 <__do_copy_data+0x8>
+  b8:	0e 94 62 00 	call	0xc4	; 0xc4 <_etext>
+  bc:	0c 94 e9 00 	jmp	0x1d2	; 0x1d2 <exit>
+
+000000c0 <_exit>:
+  c0:	f8 94       	cli
+
+000000c2 <__stop_program>:
+  c2:	ff cf       	rjmp	.-2      	; 0xc2 <__stop_program>
+
+Disassembly of section .text:
+
+000001e8 <__bad_interrupt>:
+ 1e8:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.blink_func:
+
+00000154 <blink_func>:
+		_delay_ms(250);
+	}
+}
+
+void blink_func(){
+	if(!(PIND & (1<<sw0))) //checks for SW0 button press, negative since the buttons are low active
+ 154:	4a 99       	sbic	0x09, 2	; 9
+ 156:	1c c0       	rjmp	.+56     	; 0x190 <blink_func+0x3c>
+	{
+		if(currentLED == led0) //if already on
+ 158:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 15c:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 160:	89 2b       	or	r24, r25
+ 162:	91 f4       	brne	.+36     	; 0x188 <blink_func+0x34>
+		{
+			//toggle blinkstate
+			if(blinkstate == 1)
+ 164:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <blinkstate>
+ 168:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <blinkstate+0x1>
+ 16c:	01 97       	sbiw	r24, 0x01	; 1
+ 16e:	29 f4       	brne	.+10     	; 0x17a <blink_func+0x26>
+			{
+				blinkstate = 0;
+ 170:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <blinkstate+0x1>
+ 174:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <blinkstate>
+ 178:	0b c0       	rjmp	.+22     	; 0x190 <blink_func+0x3c>
+			}
+			else
+			{
+				blinkstate = 1;
+ 17a:	81 e0       	ldi	r24, 0x01	; 1
+ 17c:	90 e0       	ldi	r25, 0x00	; 0
+ 17e:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <blinkstate+0x1>
+ 182:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <blinkstate>
+ 186:	04 c0       	rjmp	.+8      	; 0x190 <blink_func+0x3c>
+			}
+		}
+		else //change led if not on
+		{
+			currentLED = led0;
+ 188:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 18c:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
+		}	
+	}
+	if(!(PIND & (1<<sw1))) //checks for SW1 button press, negative since the buttons are low active
+ 190:	4b 99       	sbic	0x09, 3	; 9
+ 192:	1e c0       	rjmp	.+60     	; 0x1d0 <blink_func+0x7c>
+	{
+		if(currentLED == led9)
+ 194:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 198:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 19c:	01 97       	sbiw	r24, 0x01	; 1
+ 19e:	91 f4       	brne	.+36     	; 0x1c4 <blink_func+0x70>
+		{
+			if(blinkstate == 1)
+ 1a0:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <blinkstate>
+ 1a4:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <blinkstate+0x1>
+ 1a8:	01 97       	sbiw	r24, 0x01	; 1
+ 1aa:	29 f4       	brne	.+10     	; 0x1b6 <blink_func+0x62>
+			{
+				blinkstate = 0;
+ 1ac:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <blinkstate+0x1>
+ 1b0:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <blinkstate>
+ 1b4:	08 95       	ret
+			}
+			else
+			{
+				blinkstate = 1;
+ 1b6:	81 e0       	ldi	r24, 0x01	; 1
+ 1b8:	90 e0       	ldi	r25, 0x00	; 0
+ 1ba:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <blinkstate+0x1>
+ 1be:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <blinkstate>
+ 1c2:	08 95       	ret
+			}
+		}
+		else
+		{
+			currentLED = led9;
+ 1c4:	81 e0       	ldi	r24, 0x01	; 1
+ 1c6:	90 e0       	ldi	r25, 0x00	; 0
+ 1c8:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 1cc:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1d0:	08 95       	ret
+
+Disassembly of section .text.main:
+
+000000c4 <main>:
+int currentLED = PINB1;
+
+int main(void)
+{
+	
+	DDRB = 0xff;
+  c4:	8f ef       	ldi	r24, 0xFF	; 255
+  c6:	84 b9       	out	0x04, r24	; 4
+	PORTB = 0x00;
+  c8:	15 b8       	out	0x05, r1	; 5
+	
+	DDRD = 0x00;
+  ca:	1a b8       	out	0x0a, r1	; 10
+	PORTD = 0xff;
+  cc:	8b b9       	out	0x0b, r24	; 11
+	//		PINB ^= (1 << PINB0)	toggles PINB0
+	//		PINB |= (1 << PINB0)	sets PINB0 to high
+	
+	while (1)
+	{
+		blink_func();
+  ce:	0e 94 aa 00 	call	0x154	; 0x154 <blink_func>
+
+		if(blinkstate == 1)
+  d2:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <blinkstate>
+  d6:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <blinkstate+0x1>
+  da:	01 97       	sbiw	r24, 0x01	; 1
+  dc:	c9 f4       	brne	.+50     	; 0x110 <main+0x4c>
+		{
+			PORTB &= ~(1<< (!currentLED)); //sets all other LED to low
+  de:	85 b1       	in	r24, 0x05	; 5
+  e0:	20 91 00 01 	lds	r18, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+  e4:	30 91 01 01 	lds	r19, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+  e8:	23 2b       	or	r18, r19
+  ea:	11 f4       	brne	.+4      	; 0xf0 <main+0x2c>
+  ec:	9d ef       	ldi	r25, 0xFD	; 253
+  ee:	01 c0       	rjmp	.+2      	; 0xf2 <main+0x2e>
+  f0:	9e ef       	ldi	r25, 0xFE	; 254
+  f2:	89 23       	and	r24, r25
+  f4:	85 b9       	out	0x05, r24	; 5
+			PORTB ^= (1 << currentLED); //toggles current LED
+  f6:	25 b1       	in	r18, 0x05	; 5
+  f8:	81 e0       	ldi	r24, 0x01	; 1
+  fa:	90 e0       	ldi	r25, 0x00	; 0
+  fc:	00 90 00 01 	lds	r0, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 100:	02 c0       	rjmp	.+4      	; 0x106 <main+0x42>
+ 102:	88 0f       	add	r24, r24
+ 104:	99 1f       	adc	r25, r25
+ 106:	0a 94       	dec	r0
+ 108:	e2 f7       	brpl	.-8      	; 0x102 <main+0x3e>
+ 10a:	82 27       	eor	r24, r18
+ 10c:	85 b9       	out	0x05, r24	; 5
+ 10e:	18 c0       	rjmp	.+48     	; 0x140 <main+0x7c>
+		}
+		else
+		{
+			PORTB &= ~(1<< (!currentLED)); //sets all other LED to low
+ 110:	85 b1       	in	r24, 0x05	; 5
+ 112:	20 91 00 01 	lds	r18, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 116:	30 91 01 01 	lds	r19, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 11a:	23 2b       	or	r18, r19
+ 11c:	11 f4       	brne	.+4      	; 0x122 <main+0x5e>
+ 11e:	9d ef       	ldi	r25, 0xFD	; 253
+ 120:	01 c0       	rjmp	.+2      	; 0x124 <main+0x60>
+ 122:	9e ef       	ldi	r25, 0xFE	; 254
+ 124:	89 23       	and	r24, r25
+ 126:	85 b9       	out	0x05, r24	; 5
+			PORTB |= (1 << currentLED); //sets current LED to HIGH
+ 128:	25 b1       	in	r18, 0x05	; 5
+ 12a:	81 e0       	ldi	r24, 0x01	; 1
+ 12c:	90 e0       	ldi	r25, 0x00	; 0
+ 12e:	00 90 00 01 	lds	r0, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 132:	02 c0       	rjmp	.+4      	; 0x138 <main+0x74>
+ 134:	88 0f       	add	r24, r24
+ 136:	99 1f       	adc	r25, r25
+ 138:	0a 94       	dec	r0
+ 13a:	e2 f7       	brpl	.-8      	; 0x134 <main+0x70>
+ 13c:	82 2b       	or	r24, r18
+ 13e:	85 b9       	out	0x05, r24	; 5
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 140:	2f ef       	ldi	r18, 0xFF	; 255
+ 142:	84 e3       	ldi	r24, 0x34	; 52
+ 144:	9c e0       	ldi	r25, 0x0C	; 12
+ 146:	21 50       	subi	r18, 0x01	; 1
+ 148:	80 40       	sbci	r24, 0x00	; 0
+ 14a:	90 40       	sbci	r25, 0x00	; 0
+ 14c:	e1 f7       	brne	.-8      	; 0x146 <main+0x82>
+ 14e:	00 c0       	rjmp	.+0      	; 0x150 <main+0x8c>
+ 150:	00 00       	nop
+ 152:	bd cf       	rjmp	.-134    	; 0xce <main+0xa>
+
+Disassembly of section .text.__dummy_fini:
+
+000001f0 <_fini>:
+ 1f0:	08 95       	ret
+
+Disassembly of section .text.__dummy_funcs_on_exit:
+
+000001f2 <__funcs_on_exit>:
+ 1f2:	08 95       	ret
+
+Disassembly of section .text.__dummy_simulator_exit:
+
+000001f4 <__simulator_exit>:
+ 1f4:	08 95       	ret
+
+Disassembly of section .text.exit:
+
+000001d2 <exit>:
+ 1d2:	ec 01       	movw	r28, r24
+ 1d4:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <__funcs_on_exit>
+ 1d8:	0e 94 f8 00 	call	0x1f0	; 0x1f0 <_fini>
+ 1dc:	ce 01       	movw	r24, r28
+ 1de:	0e 94 fa 00 	call	0x1f4	; 0x1f4 <__simulator_exit>
+ 1e2:	ce 01       	movw	r24, r28
+ 1e4:	0e 94 f6 00 	call	0x1ec	; 0x1ec <_Exit>
+
+Disassembly of section .text._Exit:
+
+000001ec <_Exit>:
+ 1ec:	0e 94 60 00 	call	0xc0	; 0xc0 <_exit>

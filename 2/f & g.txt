@@ -1,0 +1,14 @@
+f)
+
+durch sprung addressen in dieser Form:
+   4:	0c 94 e2 00 	jmp	0x1c4	; 0x1c4 <__vector_1>
+   8:	0c 94 b6 00 	jmp	0x16c	; 0x16c <__vector_2>
+
+
+g)
+beim polling geschieht es leicht, dass eine Änderung während eines delay befehls auftritt, wodurch jener nicht erkannt und damit verarbeitet wird.
+zudem ist der prozessor im normalfall unter ständiger vollauslastung.
+
+interrupts können, anhängig von der Implementierung, meist nur eine oder wenige mehr interrupt aktionen gleichzeitig verarbeiten/zwischenspeichern.
+dadurch kann es unter umständen zu einem nicht verarbeiten von interrupts kommen.
+interrupts ermöglichen aber zb einen idle betrieb, was bei polling unmöglich ist
